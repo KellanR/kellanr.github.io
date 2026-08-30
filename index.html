@@ -10,26 +10,58 @@
 </header>
 
 
-<body>
+<body class="body">
 
   <head>
     <link rel="stylesheet" href="main.css">
     <p><strong> Projects and Content </strong></p>
   </head>
-  
-    <main>
-      <div class="centerDivider">
-        <p>
-          Welcome to my CSCI 3054 webpage! This is where I will be posting my projects and content for the class. Please
-          check back often for updates!
-        </p>
-      </div>
-    </main>
+
+  <main>
+    <div class="centerDivider">
+      <p>
+        Welcome to Kellan Rutherford Jr's CSCI 3054 webpage! This is where I will be posting my projects and content for
+        the class. Please
+        check back often for updates!
+      </p>
+      <ul class="projectList">
+        <em>Projects:</em>
+        <em><strong>N/A</strong></em>
+        </u>
+    </div>
+  </main>
   <footer>
     <p class="footer">2026 Kellan Rutherford Jr.</p>
   </footer>
 
-</body>
 
+</body>
+<script>
+
+  function SpinTheBackground() {
+    const Background = document.createElement("img");
+    Background.style.position = "fixed";
+    Background.style.top = "0";
+    Background.style.left = "0";
+    Background.style.width = "100%";
+    Background.style.height = "100%";
+    Background.style.zIndex = "-1";
+    Background.style.transform = "scale(1.5)";
+    Background.style.filter = "blur(1.5rem)";
+    Background.style.background = "linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 56%, rgba(237, 221, 83, 1) 100%)";
+    document.body.appendChild(Background);
+    /*
+    while (true) {
+
+      for (let i = 0; i <= 360; i++) {
+        Background.style.background = "linear-gradient(" + i + "deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 56%, rgba(237, 221, 83, 1) 100%)";
+        
+      }
+    }
+    */
+  }
+  SpinTheBackground();
+  
+</script>
 
 </html>
