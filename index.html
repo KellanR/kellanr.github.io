@@ -8,26 +8,7 @@
   <meta name="description" content="Kellan Rutherford Jr's CSCI Webpage">
   <link rel="stylesheet" href="main.css">
   <title>CSCI 3054</title>
-  <script>
-  function FilterTheBackground() {
-    const Background = document.createElement("img");
-    Background.style.position = "fixed";
-    Background.style.top = "0";
-    Background.style.left = "0";
-    Background.style.width = "100%";
-    Background.style.height = "100%";
-    Background.style.zIndex = "-1";
-    Background.style.transform = "scale(1.5)";
-    Background.style.filter = "blur(1.5rem)";
-    // Implementing a gradient overtime after working out the animation mechanics. This will be a future update.
-    Background.style.background = "#262424";
-    document.body.appendChild(Background);
-
-  }
-    
-  FilterTheBackground();
   
-</script>
 </head>
 
 
@@ -35,7 +16,7 @@
   <header>
     
     <p><strong> Projects and Content </strong></p>
-  </head>
+  </header>
 
   <main>
     <div class="centerDivider">
@@ -55,7 +36,26 @@
   <footer>
     <p class="footer">2026 Kellan Rutherford Jr.</p>
   </footer>
+<script>
+  function FilterTheBackground() {
+    const Background = document.createElement("img");
+    Background.style.position = "fixed";
+    Background.style.top = "0";
+    Background.style.left = "0";
+    Background.style.width = "100%";
+    Background.style.height = "100%";
+    Background.style.zIndex = "-1";
+    Background.style.transform = "scale(1.5)";
+    Background.style.filter = "blur(1.5rem)";
+    // Implementing a gradient overtime after working out the animation mechanics. This will be a future update.
+    Background.style.background = "#262424";
+    document.body.appendChild(Background);
 
+  }
+    
+  FilterTheBackground();
+  
+</script>
 </body>
 
 
