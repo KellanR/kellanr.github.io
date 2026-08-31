@@ -24,6 +24,7 @@
         the class. Please
         check back often for updates!
       </p>
+     
       <ul class="projectList">
         <em>Projects:</em>
         <em><strong>N/A</strong></em>
@@ -34,10 +35,9 @@
     <p class="footer">2026 Kellan Rutherford Jr.</p>
   </footer>
 
-
 </body>
 <script>
-  function SpinTheBackground() {
+  function FilterTheBackground() {
     const Background = document.createElement("img");
     Background.style.position = "fixed";
     Background.style.top = "0";
@@ -47,21 +47,13 @@
     Background.style.zIndex = "-1";
     Background.style.transform = "scale(1.5)";
     Background.style.filter = "blur(1.5rem)";
+    // Implementing a gradient overtime after working out the animation mechanics. This will be a future update.
     Background.style.background = "#262424";
-    Background.style.background = "radial-gradient(circle,rgba(38, 36, 36, 1) 0%, rgba(138, 129, 129, 0.99) 50%, rgba(38, 36, 36, 1) 100%)";
     document.body.appendChild(Background);
-    
-    /*
-    while (true) {
 
-      for (let i = 0; i <= 360; i++) {
-        Background.style.background = "linear-gradient(" + i + "deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 56%, rgba(237, 221, 83, 1) 100%)";
-        
-      }
-    }
-    */
   }
-  SpinTheBackground();
+    
+  FilterTheBackground();
   
 </script>
 
