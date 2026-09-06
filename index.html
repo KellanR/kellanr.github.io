@@ -26,15 +26,8 @@
       </p>
      
       <ul id="projectList">
-        <li>Projects: N/A</li>
-        <li><div class="projectButtons">Project 1</div></li>
-      <li><div class="projectButtons">Project 2</div></li>
-      <li><div class="projectButtons">Project 3</div></li>
-      <li><div class="projectButtons">Project 4</div></li>
-      <li><div class="projectButtons">Project 5</div></li>
-      <li><div class="projectButtons">Project 6</div></li>
-      <li><div class="projectButtons">Project 1</div></li>
-
+        <li>Projects:</li>
+        <li><button id="project1Button" class="projectButtons" type="button"><a href="1/index.html">Project 1</a></button></li>
       </ul>
     </div>
   </main>
@@ -56,10 +49,15 @@
     // Implementing a gradient overtime after working out the animation mechanics. This will be a future update.
     Background.style.background = "#262424";
     document.body.appendChild(Background);
-
   }
-    
   FilterTheBackground();
+
+  
+  function SendToProject1() {
+    window.location.href = "1/index.html";
+  }
+  project1Button = document.getElementById("project1Button");
+  project1Button.addEventListener("click", SendToProject1);
   
 </script>
 </body>
