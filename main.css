@@ -23,5 +23,25 @@ p {
     }
     .centerDivider{
       height: 750px;
-      
+      color: white;
+      text-align: center;
     }
+    #projectList {
+      color: white;
+      list-style-type: none;
+    }
+    #projectList li {
+      display: inline-block;
+    }
+    .projectButtons {
+      display: block;
+      width: 200px;
+      height: 200px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      line-height: 200px;
+      margin: 10px;
+    }
+    
