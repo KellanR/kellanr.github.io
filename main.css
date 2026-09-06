@@ -35,13 +35,15 @@ p {
     }
     .projectButtons {
       display: block;
-      width: 200px;
-      height: 200px;
+      width: 10rem;
+      height: 5rem;
       background-color: #333;
       color: white;
       text-decoration: none;
       text-align: center;
-      line-height: 200px;
+      line-height: 4;
       margin: 10px;
+  
     }
+    
     
