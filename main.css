@@ -48,16 +48,18 @@ ul {
   background-color: #333;
   font-size: 1.3rem;
   color: white;
-  border-color: white;
+  
   line-height: 5rem;
   text-align: center;
   margin: 10px;
   text-decoration: none;
-  border-radius: 1vmax;
+  border-width: 0.2rem;
+  border-radius: 1rem;
   border-style: solid;
+  border-color: white;
 }
 #project1Button {
-  margin-left: -1vmax;
+  margin-left: -2rem;
 }
 
 .projectButtons:hover {
