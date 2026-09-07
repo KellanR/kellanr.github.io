@@ -2,6 +2,10 @@ h1 {
   text-align: center;
   color: white;
 }
+h2 {
+  text-align: center;
+  color: white;
+}
 
 p {
   font-size: 20px;
@@ -51,6 +55,9 @@ ul {
   text-decoration: none;
   border-radius: 1vmax;
   border-style: solid;
+}
+#project1Button {
+  margin-left: -1vmax;
 }
 
 .projectButtons:hover {
