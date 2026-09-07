@@ -35,14 +35,14 @@ ul {
 #projectList {
   color: white;
   list-style-type: none;
+  display: flex;
+  justify-content: center;
 }
 
-#projectList li {
-  display: inline-block;
-}
 
 .projectButtons {
-  display: block;
+  position: center;
+  display: inline-block;
   width: 10rem;
   height: 5rem;
   background-color: #333;
@@ -51,16 +51,14 @@ ul {
   
   line-height: 5rem;
   text-align: center;
-  margin: 10px;
+  margin: .3rem;
   text-decoration: none;
   border-width: 0.2rem;
   border-radius: 1rem;
   border-style: solid;
   border-color: white;
 }
-#project1Button {
-  margin-left: -1.5rem;
-}
+
 
 .projectButtons:hover {
   background-color: #444;
