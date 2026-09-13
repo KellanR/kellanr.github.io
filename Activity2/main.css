@@ -1,7 +1,7 @@
 
 nav ul {
     /*Rule 1*/
-    display:block flex;
+    display:flex;
 }
 
 
@@ -31,20 +31,23 @@ padding: 0 30em;
 */
 
 /*4c*/
-padding: 0 5em;
+padding: 0 10%;
 
 }
 /*Rule 5*/
 footer p {
     text-align: right;
 }
+/*Rule 6*/
 div img{
     width: 400px;
     height: 400px;
 }
+/*Rule 6*/
 div span{
-    
-    position: sticky;
-    
-    
+    color: white;
+    left: -6.1em;
+    top: -.5em;
+    position: relative;
+
 }
