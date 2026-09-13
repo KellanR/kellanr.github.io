@@ -15,8 +15,11 @@ p {
 
 ul {
   list-style-type: none;
-  list-style-position: inside;
   color: white;
+  /* Padding rule seems redundant,
+  but web browsers automatically add 40 to <ul>
+  */
+  padding-left: 0;
 }
 
 
@@ -33,7 +36,7 @@ ul {
 
 #projectList {
   color: white;
-  list-style-type: none;
+  list-style-type:none;
   display: flex;
   justify-content: center;
 }
