@@ -10,7 +10,7 @@ nav ul li {
 list-style-type: none;
 
 /*Rule 2*/
-background-color: red;
+background-color: hwb(0 0% 0% / 0.502);
 
 /*3a
 margin-right: 30px;
@@ -45,9 +45,11 @@ div img{
 }
 /*Rule 6*/
 div span{
+    /*Color change for better visibility*/
     color: white;
-    left: -6.1em;
-    top: -.5em;
+    
+    left: -100px;
+    top: -10px;
     position: relative;
 
 }

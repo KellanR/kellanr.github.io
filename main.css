@@ -14,7 +14,6 @@ p {
 }
 
 ul {
-  font-size: 20px;
   list-style-type: none;
   list-style-position: inside;
   color: white;
@@ -39,25 +38,29 @@ ul {
   justify-content: center;
 }
 
-
 .projectButtons {
-  position: center;
-  display: inline-block;
-  width: 10rem;
-  height: 5rem;
+  width: 8em;
+  height: 4em;
   background-color: #333;
-  font-size: 1.3rem;
   color: white;
-  
-  line-height: 5rem;
-  text-align: center;
-  margin: .3rem;
-  margin-left: -1.5rem;
   text-decoration: none;
   border-width: 0.2rem;
   border-radius: 1rem;
   border-style: solid;
   border-color: white;
+  margin: .1em .3em;
+}
+.projectButtons a {
+  display: flex;
+  font-size: 1.5em;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-decoration: none;
+  line-height: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 
