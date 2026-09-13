@@ -1,0 +1,50 @@
+
+nav ul {
+    /*Rule 1*/
+    display:block flex;
+}
+
+
+nav ul li {
+/*Rule 1*/
+list-style-type: none;
+
+/*Rule 2*/
+background-color: red;
+
+/*3a
+margin-right: 30px;
+margin-left: 30px;
+*/
+
+/*3b
+margin-right: 30em;
+margin-left: 30em;
+*/
+
+/*4a
+padding: 0 30px;
+*/
+
+/*4b
+padding: 0 30em;
+*/
+
+/*4c*/
+padding: 0 5em;
+
+}
+/*Rule 5*/
+footer p {
+    text-align: right;
+}
+div img{
+    width: 400px;
+    height: 400px;
+}
+div span{
+    
+    position: sticky;
+    
+    
+}
