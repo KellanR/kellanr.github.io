@@ -1,14 +1,44 @@
 h1 {
     text-align: center;
 }
+
 #TopicDesc {
     text-align: center;
 }
+
 #AppDesc {
     text-align: center;
 }
-body{
+
+body {
     text-align: center;
     background-color: #252424;
     color: white;
+}
+
+section h2 {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.097);
+    border-radius: 1rem;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.566);
+}
+
+section h3 {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.097);
+    border-radius: 1rem;
+    border-style: hidden;
+    border-color: rgba(255, 255, 255, 0.566);
+    width: 10rem;
+    place-self: center;
+
+}
+
+a {
+    color: #0080ff;
+}
+
+a:visited {
+    color: #0080ff;
 }
