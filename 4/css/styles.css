@@ -1,0 +1,27 @@
+/* SCSS HEX */
+/* SCSS HSL */
+/* SCSS RGB */
+/* SCSS Gradient */
+:root {
+  --black: rgb(0, 0, 0);
+  --prussian-blue: rgb(20, 33, 61);
+  --orange: rgb(252, 163, 17);
+  --alabaster-grey: rgb(229, 229, 229);
+  --white: rgb(255, 255, 255);
+}
+
+#mainNavBar {
+  background-color: rgb(0, 0, 0);
+}
+
+.navbar-brand {
+  color: rgb(252, 163, 17);
+}
+
+.navbar-brand:hover {
+  color: rgb(252, 163, 17);
+}
+
+.NavMenuIcon {
+  color: rgb(255, 255, 255);
+}/*# sourceMappingURL=styles.css.map */
