@@ -1,7 +1,4 @@
-/* SCSS HEX */
-/* SCSS HSL */
-/* SCSS RGB */
-/* SCSS Gradient */
+
 :root {
   --black: rgb(0, 0, 0);
   --prussian-blue: rgb(20, 33, 61);
@@ -24,4 +21,4 @@
 
 .NavMenuIcon {
   color: rgb(255, 255, 255);
-}/*# sourceMappingURL=styles.css.map */
+}
