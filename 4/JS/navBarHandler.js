@@ -4,19 +4,24 @@ document.addEventListener('DOMContentLoaded', () => {
   // We will now be implementing templates to help with dynamic changinges.
 
   const navData = {
+    home: {
+      text: "Home",
+      href: "/4/index.html"
+    },
   
     planetDesc: {
-      text: "Planet Breakdown",
-      href: "/4/choices.html"
+      text: "Explorer",
+      href: "/4/explorer.html"
+    },
+    
+    TheFormation: {
+      text: "The Formation",
+      href: "/4/TheFormation.html"
     },
     contactus:{
       text: "Contact Us",
       href: "/4/contactus.html"
     },
-    TheFormation: {
-      text: "The Formation",
-      href: "/4/TheFormation.html"
-    }
   }
 
   for (const navDetails of Object.keys(navData)) {

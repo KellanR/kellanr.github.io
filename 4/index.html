@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="vh-100">
+<body class="min-vh-100 d-flex flex-column">
 
   <header>
     <nav class="navbar navbar-expand-sm navbar-dark" id="mainNavBar">
@@ -45,31 +45,42 @@
 
       </div>
     </nav>
-    <h1 class="text-center mt-2">Welcome to the Space Explorer!</h1>
+
   </header>
 
-  <main class="container-fluid h-75 d-flex flex-column ">
-    <div class="container d-flex justify-content-center align-items-center h-100">
-
+  <main class="container-fluid flex-grow-1 d-flex flex-column ">
+    <h1 class="text-center">Welcome to the Space Explorer!</h1>
+    <div class="container border rounded-5 text-light bg-dark d-flex flex-column justify-content-center align-items-center w-auto">
+      <p class="fw-bold fs-1 mb-0">Login</p>
+      <img src="content/img/planet_logo.svg" alt="Website Logo" class="img-fluid mb-3">
+      <p class="fw-bold fs-5 mb-0 w-50">Please enter your credentials to access the Space Explorer.</p>
+      <form class="mb-3 form-group fw-bold bg-transparent w-50 h-50 d-flex flex-column justify-content-center align-items-center"
+        id="ContactForm">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control bg-transparent text-light" id="NameInput" name="name" required>
+        <label for="password">Password:</label>
+        <input type="password" class="form-control bg-transparent text-light" id="PasswordInput" name="password" required>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+      </form>
     </div>
-
-    </div>
-
 
   </main>
 
-  <footer class="footer container-fluid bg-dark text-light h-25 d-flex flex-column rounded-top-4">
-    <div class="container-fluid d-flex flex-grow-1 mx-4">
-      <div class="row w-100 border mt-3">
+  <footer class="footer container-fluid bg-dark text-light h-25 d-flex flex-column rounded-top-4 pt-3">
+    <div class=" container-fluid d-flex flex-grow-1">
+      <div class="row w-100 border rounded-3 m-0">
 
-        <div id="InternalRedirects" class="footercolumn d-flex flex-column col justify-content-evenly fw-bold">
-        
+        <div id="InternalRedirects" class=" pt-2 footercolumn d-flex flex-column col justify-content-evenly fw-bold">
         </div>
-        <div class="footercolumn col " id="Statements">
-        
+        <div class="footercolumn col p-3 d-flex justify-content-center" id="Statements">
+          <p class="h-100">"Showing the complicated cosmos, one step at a time."</p>
         </div>
-        <div class="footercolumn col" id="ExternalRedirects">
-          
+        <div class="footercolumn col m-0 d-flex justify-content-center pt-3 pb-3" id="ExternalRedirects">
+          <div class=" d-inline-flex w-100 ">
+            <img src="content/img/github_logo.svg" class="w-25 h-25" alt="Link to Github Repository" id="GitHubLogo">
+            <a class="h-25 w-75 fs-5" href="https://github.com/KellanR/kellanr.github.io"
+              style="color: white; text-decoration: none;">Github Repository</a>
+          </div>
         </div>
       </div>
 
