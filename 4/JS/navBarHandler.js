@@ -3,12 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // This HTML body is getting long and difficult to read with the bootstrap implementation.
   // We will now be implementing templates to help with dynamic changinges.
 
-  const index_html = {
-    login: {
-      text: "Home",
-      href: "/4/index.html"
-    },
-
+  const navData = {
+  
     planetDesc: {
       text: "Planet Breakdown",
       href: "/4/choices.html"
@@ -27,9 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const newNav = document.createElement("li")
     if (navData[navDetails]["href"]) {
       const Anchor = document.createElement("a")
-      Anchor.className = "nav-link"
+      
       Anchor.href = navData[navDetails]["href"]
       Anchor.textContent = navData[navDetails]["text"]
+      
+      // Duplicate and append before Bootstrap class tagging.
+      Anchor.className = "footerlinkredirects"
+      document.getElementById("InternalRedirects").appendChild(Anchor.cloneNode(true))
+      
+      // ClassName overwrite for the navbar link.
+      Anchor.className = "nav-link"
       newNav.appendChild(Anchor)
     } else {
       Anchor.textContent = navData[navDetails]["text"]
