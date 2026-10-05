@@ -9,11 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
       href: "/4/index.html"
     },
   
-    planetDesc: {
-      text: "Explorer",
-      href: "/4/explorer.html"
+    InnerPlanet: {
+      text: "Inner Planets",
+      href: "/4/innerplanet.html"
     },
     
+    OuterPlanet: {
+      text: "Outer Planets",
+      href: "/4/outerplanet.html"
+    },
     TheFormation: {
       text: "The Formation",
       href: "/4/TheFormation.html"
