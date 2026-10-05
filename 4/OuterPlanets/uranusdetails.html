@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kellan Rutherford Jr">
+    <meta name="description" content="Blank">
+    <title>Uranus Details | Up in space!</title>
+
+    <base href="/4/">
+    </base>
+    <!--Favicon.io : Creation of Faviocon and Tags  -->
+    <link rel="apple-touch-icon" sizes="180x180" href="content/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="content/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="content/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="content/img/favicon/site.webmanifest">
+
+    <!-- Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="min-vh-100 d-flex flex-column">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark" id="mainNavBar">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Up in Space!</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="material-symbols-outlined NavMenuIcon">menu</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- Script: navBarHandler.js -->
+                    <ul class="navbar-nav" id="NavsHolder">
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid flex-grow-1 d-flex flex-column py-2  justify-content-evenly ">
+        <h1 class="text-center" >Uranus</h1>
+        <img src="content/img/planet_logo.svg" alt="Uranus" class="img-fluid mb-3 mx-auto d-block">
+        <table class="table table-striped table-hover table-bordered border-light">
+            <thead>
+                <tr>
+                    <th scope="col">Property</th>
+                    <th scope="col">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mass</td>
+                    <td>1.898 × 10^27 kg</td>
+                </tr>
+                <tr>
+                    <td>Diameter</td>
+                    <td>139,820 km</td>
+                </tr>
+                <tr>
+                    <td>Orbital Period</td>
+                    <td>11.86 years</td>
+                </tr>
+                <tr>
+                    <td>Distance from Sun</td>
+                    <td>778.5 million km (5.2 AU)</td>
+                </tr>
+                <tr>
+                    <td>Number of Moons</td>
+                    <td>79 (as of 2023)</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer class="footer container-fluid bg-dark text-light d-flex flex-column rounded-top-4 pt-3">
+        <div class=" container-fluid d-flex flex-grow-1">
+            <div class="row w-100 border rounded-3 m-0">
+
+                <div id="InternalRedirects"
+                    class="footercolumn pt-2 d-flex flex-column col justify-content-evenly fw-bold">
+                </div>
+                <div class="footercolumn col p-3 d-flex justify-content-center" id="Statements">
+                    <p class="h-100">"Showing the complicated cosmos, one step at a time."</p>
+                </div>
+                <div class="footercolumn col m-0 d-flex justify-content-center pt-3 pb-3" id="ExternalRedirects">
+                    <div class=" d-inline-flex w-100 ">
+                        <img src="content/img/github_logo.svg" class="w-25 h-25" alt="Link to Github Repository"
+                            id="GitHubLogo">
+                        <a class="h-25 w-75 fs-5" href="https://github.com/KellanR/kellanr.github.io">Github
+                            Repository</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <p class="text-center mb-0 py-2">2026 Kellan Rutherford Jr.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/navBarHandler.js"></script>
+</body>
+
+</html>
