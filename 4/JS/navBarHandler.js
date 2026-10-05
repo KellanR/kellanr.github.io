@@ -8,12 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
       text: "Home",
       href: "/4/index.html"
     },
-  
-    
-    
-    Explorer: {
+    InnerPlanets: {
+      text: "Inner Planets",
+      href: "/4/innerplanet.html"
+    },
+    OuterPlanets: {
       text: "Outer Planets",
-      href: "/4/explorer.html"
+      href: "/4/outerplanet.html"
     },
     TheFormation: {
       text: "The Formation",
