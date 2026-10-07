@@ -1,0 +1,47 @@
+{
+    "title": "Snowboard Adventures - Alpine Snowboarding Guide",
+    "header": "Snowboarding Adventures",
+    "hero": {
+        "headline": "Conquer the Powder Snowboarding",
+        "description": "Discover the rhythm, thrilling edge turns, and serene majesty of alpine snowboard adventures around the world's most breathtaking peaks.",
+        "image": "../img/alpineBoarding.jpg"
+    },
+    "sections": {
+        "overview": {
+            "title": "Overview of Alpine Snowboarding",
+            "subtitle": "Understanding the art, history, and excitement of carving across snow-covered mountains.",
+            "cards": [
+                {
+                "title": "The Discipline",
+                "description": "Alpine snowboarding involves carving down snow-covered slopes on a single board with fixed bindings. It emphasizes continuous edge control, stance rotation, and fluid momentum."
+                },
+                {
+                "title": "Health Benefits",
+                "description": "Snowboarding provides an intense core and lower-body workout, builds dynamic balance and joint agility, and boosts mental endurance through mountain immersion."
+                },
+                {
+                "title": "Trail Rating System",
+                "description": "Slopes are categorized by color: Green Circles for beginners, Blue Squares for intermediate riders, Black Diamonds for advanced, and Double Blacks for expert terrain."
+                }
+            ]
+        },
+        "equipment": {
+            "title": "Essential Gear & Equipment",
+            "subtitle": "Proper equipment ensures both peak performance and complete mountain safety.",
+            "cards": [
+                {
+                "title": "1. Snowboard & Bindings",
+                "description": "Modern carving snowboards feature progressive sidecuts and stiff flex profiles. Custom strap or step-on bindings transfer heel-to-toe force directly to your edges."
+                },
+                {
+                "title": "2. Snowboard Boots",
+                "description": "Boots are your primary point of control. Specialized boots with quick-lace systems keep your ankles supported and eliminate heel lift during deep turns."
+                },
+                {
+                "title": "3. Helmets & Goggles",
+                "description": "Safety starts at the top. Helmets protect against high-velocity impacts, while wide-field, anti-fog goggles preserve peripheral vision on overcast days."
+                }
+            ]
+        }
+    }
+}
