@@ -16,7 +16,7 @@ fetch("js/boardingData.json")
             for (let key in dataObject) {
                 switch (key) {
                     case "title": {
-                        returnItem("title").textContent = dataObject[key];
+                        returnItem("#styleName").textContent = dataObject[key];
                         break;
                     }
                     case "header": {
