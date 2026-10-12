@@ -49,17 +49,19 @@ fetch("js/boardingData.json")
                         const equipmentkey = dataObject[key].equipment
                         returnItem("#sec2Subtitle").textContent = equipmentkey.subtitle;
 
-                        cards[3].querySelector("h3").textContent = overviewkey.cards[0].title;
+                        cards[3].querySelector("h3").textContent = equipmentkey.cards[0].title;
                         cards[3].querySelector("p").textContent = equipmentkey.cards[0].description;
                         
-                        cards[4].querySelector("h3").textContent = overviewkey.cards[1].title;
+                        cards[4].querySelector("h3").textContent = equipmentkey.cards[1].title;
                         cards[4].querySelector("p").textContent = equipmentkey.cards[1].description;
                        
-                        cards[5].querySelector("h3").textContent = overviewkey.cards[2].title;
+                        cards[5].querySelector("h3").textContent = equipmentkey.cards[2].title;
                         cards[5].querySelector("p").textContent = equipmentkey.cards[2].description;
                         break;
                     }
                 }
             }
         })
-    })
+    }).catch(error => {
+        console.error("Something went wrong:", error);
+    });
