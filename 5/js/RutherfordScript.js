@@ -26,7 +26,7 @@ fetch("js/boardingData.json")
                     case "hero": {
                         returnItem("#heroTitle").textContent = dataObject[key].headline;
                         returnItem("#heroDesc").textContent = dataObject[key].description;                       
-                        document.querySelector(".hero").style.setProperty("--hero-img",'url(../img/alpineSki.jpeg' ) 
+                        document.querySelector(".hero").style.setProperty("--hero-img",'url(../img/alpineSki.jpeg)') 
                         break;
                     }
                     case "sections": {
