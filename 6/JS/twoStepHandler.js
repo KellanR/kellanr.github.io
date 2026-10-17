@@ -10,7 +10,7 @@ function loadDetails(jsonIndex) {
     detailsCopy.querySelector("#Title").textContent = jsonIndex.name
     const ROWFORMAT = detailsCopy.querySelector("#rowFormat")
     const TBODY = detailsCopy.querySelector("tbody")
-
+    detailsCopy.querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`
     // Mass
     let newRow = ROWFORMAT.cloneNode(true)
     let rowValues = newRow.querySelectorAll("td");
@@ -57,46 +57,47 @@ function loadPlanet(jsonIndex) {
     let planetCopy = PLANETTEMPLATE.cloneNode(true);
     planetCopy.querySelector("#Title").textContent = jsonIndex.name
     planetCopy.querySelector("#Desc").textContent = jsonIndex.summary
+        .querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`
     planetCopy.querySelector("button").textContent = `Learn more about ${jsonIndex.name}`
     planetCopy.querySelector("button").addEventListener("click", () => {
         loadDetails(jsonIndex)
     })
     document.querySelector("header").after(planetCopy);
 }
-function loadSelectors(dataObject){
+function loadSelectors(dataObject) {
     const selectorCopy = SELECTORTEMPLATE.cloneNode(true);
-        selectorCopy.querySelector("#Title").textContent = "Planet Selection"
-        selectorCopy.querySelector("#Desc").textContent = "Please, select a planet to explore the details about!"
+    selectorCopy.querySelector("#Title").textContent = "Planet Selection"
+    selectorCopy.querySelector("#Desc").textContent = "Please, select a planet to explore the details about!"
 
-        const cardFormat = selectorCopy.querySelector("#PLANETTYPEHERE");
-        // Inner Planets
-        for (let i = 0; i < 4; i++) {
-            let cardClone = cardFormat.cloneNode(true);
-            let jsonIndex = dataObject.groups[0].planets[i]
-            cardClone.id = jsonIndex.name;
-            cardClone.querySelector("button").textContent = jsonIndex.name;
-            cardClone.querySelector("button").addEventListener("click", () => {
-                LoadPlanet(jsonIndex)
-            })
-            selectorCopy.querySelector("#selectionHolder").appendChild(cardClone)
-        }
-        // Outer Planets
-        for (let i = 0; i < 4; i++) {
-            let cardClone = cardFormat.cloneNode(true);
-            let jsonIndex = dataObject.groups[1].planets[i]
-            cardClone.id = jsonIndex.name;
-            cardClone.querySelector("button").textContent = jsonIndex.name;
-            cardClone.querySelector("button").addEventListener("click", () => {
-                loadPlanet(jsonIndex)
-            })
-            selectorCopy.querySelector("#selectionHolder").appendChild(cardClone)
-        }
-        cardFormat.remove();
-        document.querySelector("header").after(selectorCopy);
+    const cardFormat = selectorCopy.querySelector("#PLANETTYPEHERE");
+    // Inner Planets
+    for (let i = 0; i < 4; i++) {
+        let cardClone = cardFormat.cloneNode(true);
+        let jsonIndex = dataObject.groups[0].planets[i]
+        cardClone.id = jsonIndex.name;
+        cardClone.querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`
+        cardClone.querySelector("button").textContent = jsonIndex.name;
+        cardClone.querySelector("button").addEventListener("click", () => {
+            LoadPlanet(jsonIndex)
+        })
+        selectorCopy.querySelector("#selectionHolder").appendChild(cardClone)
+    }
+    // Outer Planets
+    for (let i = 0; i < 4; i++) {
+        let cardClone = cardFormat.cloneNode(true);
+        let jsonIndex = dataObject.groups[1].planets[i]
+        cardClone.id = jsonIndex.name;
+        cardClone.querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`
+        cardClone.querySelector("button").textContent = jsonIndex.name;
+        cardClone.querySelector("button").addEventListener("click", () => {
+            loadPlanet(jsonIndex)
+        })
+        selectorCopy.querySelector("#selectionHolder").appendChild(cardClone)
+    }
+    cardFormat.remove();
+    document.querySelector("header").after(selectorCopy);
 
 }
-
-
 
 fetch("data/planets.json")
     .then(data => {
@@ -105,7 +106,7 @@ fetch("data/planets.json")
         }
         return data.json();
     }).then(dataObject => {
-       loadSelectors(dataObject)
+        loadSelectors(dataObject)
 
     }).catch(error => {
         console.error("Something went wrong: ", error);
