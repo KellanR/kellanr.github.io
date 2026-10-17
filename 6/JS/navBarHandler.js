@@ -6,23 +6,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const navData = {
     home: {
       text: "Home",
-      href: "/4/index.html"
+      href: "/6/index.html"
     },
-    InnerPlanets: {
-      text: "Inner Planets",
-      href: "/4/innerplanet.html"
-    },
-    OuterPlanets: {
-      text: "Outer Planets",
-      href: "/4/outerplanet.html"
+    PlanetExplorer: {
+      text: "Planet Explorer",
+      href: "/6/planetexplorer.html"
     },
     TheFormation: {
       text: "The Formation",
-      href: "/4/theformation.html"
+      href: "/6/theformation.html"
     },
     contactus:{
       text: "Contact Us",
-      href: "/4/contactus.html"
+      href: "/6/contactus.html"
     },
   }
 
