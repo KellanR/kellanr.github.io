@@ -20,28 +20,27 @@ document.addEventListener('DOMContentLoaded', () => {
       text: "Contact Us",
       href: "/6/contactus.html"
     },
-  }
+  };
 
   for (const navDetails of Object.keys(navData)) {
-    const newNav = document.createElement("li")
+    const newNav = document.createElement("li");
+    const Anchor = document.createElement("a");
     if (navData[navDetails]["href"]) {
-      const Anchor = document.createElement("a")
-      
-      Anchor.href = navData[navDetails]["href"]
-      Anchor.textContent = navData[navDetails]["text"]
+      Anchor.href = navData[navDetails]["href"];
+      Anchor.textContent = navData[navDetails]["text"];
       
       // Duplicate and append before Bootstrap class tagging.
-      Anchor.className = "footerlinkredirects"
-      document.getElementById("InternalRedirects").appendChild(Anchor.cloneNode(true))
+      Anchor.className = "footerlinkredirects";
+      document.getElementById("InternalRedirects").appendChild(Anchor.cloneNode(true));
       
       // ClassName overwrite for the navbar link.
-      Anchor.className = "nav-link"
-      newNav.appendChild(Anchor)
+      Anchor.className = "nav-link";
+      newNav.appendChild(Anchor);
     } else {
-      Anchor.textContent = navData[navDetails]["text"]
-      newNav.appendChild(Anchor)
+      Anchor.textContent = navData[navDetails]["text"];
+      newNav.appendChild(Anchor);
     }
-    newNav.className = "nav-item me-3"
-    document.getElementById("NavsHolder").appendChild(newNav)
+    newNav.className = "nav-item me-3";
+    document.getElementById("NavsHolder").appendChild(newNav);
   }
-})
+});
