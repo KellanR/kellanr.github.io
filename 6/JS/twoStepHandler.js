@@ -71,19 +71,20 @@ function loadSelectors(dataObject) {
 
     const cardFormat = selectorCopy.querySelector("#PLANETTYPEHERE");
     // Inner Planets
-    for (let i = 0; i < 4; i++) {
+    
+    for (let i = 0; i < dataObject.groups.planets.length; i++) {
         let cardClone = cardFormat.cloneNode(true);
         let jsonIndex = dataObject.groups[0].planets[i]
         cardClone.id = jsonIndex.name;
         cardClone.querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`
         cardClone.querySelector("button").textContent = jsonIndex.name;
         cardClone.querySelector("button").addEventListener("click", () => {
-            LoadPlanet(jsonIndex)
+            loadPlanet(jsonIndex)
         })
         selectorCopy.querySelector("#selectionHolder").appendChild(cardClone)
     }
     // Outer Planets
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < dataObject.groups.planets.length; i++) {
         let cardClone = cardFormat.cloneNode(true);
         let jsonIndex = dataObject.groups[1].planets[i]
         cardClone.id = jsonIndex.name;
