@@ -57,7 +57,7 @@ function loadPlanet(jsonIndex) {
     let planetCopy = PLANETTEMPLATE.cloneNode(true);
     planetCopy.querySelector("#Title").textContent = jsonIndex.name
     planetCopy.querySelector("#Desc").textContent = jsonIndex.summary
-        .querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`
+    planetCopy.querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`
     planetCopy.querySelector("button").textContent = `Learn more about ${jsonIndex.name}`
     planetCopy.querySelector("button").addEventListener("click", () => {
         loadDetails(jsonIndex)
@@ -110,5 +110,14 @@ fetch("data/planets.json")
         loadSelectors(dataObject)
 
     }).catch(error => {
+        let Main = document.createElement("Main")
+        Main.classList="container-fluid flex-grow-1 d-block-flex flex-wrap align-items-center justify-content-center"
+        document.querySelector("header").after(
+            Main
+        )
+        let h2 = document.createElement("h2")
+        h2.classList = "text-center"
+        h2.textContent.textContent=`Uh oh! ${error}`
+        Main.appendChild(h2)
         console.error("Something went wrong: ", error);
     });
