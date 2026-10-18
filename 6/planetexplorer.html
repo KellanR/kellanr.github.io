@@ -21,8 +21,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!-- Material Symbols -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://googleapis.com">
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -76,21 +75,23 @@
             <h1 id="Title" class="text-center"></h1>
             <p id="Desc" class="fs-5 text-center"></p>
             <div id="selectionHolder" class="container d-flex flex-wrap justify-content-evenly align-items-center">
-                <div id="PLANETTYPEHERE" class="container mx-1 border rounded-5 text-light bg-dark d-flex flex-column justify-content-center align-items-center w-25 h-25 m-0">
+                <div id="PLANETTYPEHERE"
+                    class="container mx-1 border rounded-5 text-light bg-dark d-flex flex-column justify-content-center align-items-center w-25 h-25 m-0">
                     <img id="Img" src="content/img/planet_logo.svg" alt="" class="img-fluid mb-3">
                     <button class="btn btn-primary mb-3"></button>
                 </div>
-                
+
             </div>
         </main>
     </template>
     <template id="planetTemplate">
         <main class="container-fluid flex-grow-1 d-flex flex-column py-2  justify-content-evenly ">
+            <button class="material-symbols-outlined">arrow_back</button>
             <h1 id="Title" class="text-center">Saturn</h1>
             <img id="Img" src="content/img/planet_logo.svg" alt="" class="img-fluid mb-3 mx-auto d-block">
             <p id="Desc" class="text-center fs-5"></p>
-            <button class="btn btn-primary mx-auto d-block">
-                
+            <button id="LearnMoreBtn" class="btn btn-primary mx-auto d-block">
+
             </button>
 
         </main>
@@ -114,7 +115,8 @@
                 </tbody>
             </table>
             <p>
-                Source: <cite><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/index.html">NASA Planetary Fact Sheet</a></cite>
+                Source: <cite><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/index.html">NASA Planetary Fact
+                        Sheet</a></cite>
             </p>
         </main>
     </template>

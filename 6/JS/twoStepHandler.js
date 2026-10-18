@@ -52,48 +52,38 @@ function loadDetails(jsonIndex) {
 }
 
 function loadPlanet(jsonIndex) {
-    document.querySelector("main").remove()
-    TITLETAG.textContent = `${jsonIndex.name} | Up In Space!`
+    document.querySelector("main").remove();
+    TITLETAG.textContent = `${jsonIndex.name} | Up In Space!`;
     let planetCopy = PLANETTEMPLATE.cloneNode(true);
-    planetCopy.querySelector("#Title").textContent = jsonIndex.name
-    planetCopy.querySelector("#Desc").textContent = jsonIndex.summary
-    planetCopy.querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`
-    planetCopy.querySelector("button").textContent = `Learn more about ${jsonIndex.name}`
-    planetCopy.querySelector("button").addEventListener("click", () => {
+    planetCopy.querySelector("#Title").textContent = jsonIndex.name;
+    planetCopy.querySelector("#Desc").textContent = jsonIndex.summary;
+    planetCopy.querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`;
+    planetCopy.querySelector("#LearnMoreBtn").textContent = `Learn more about ${jsonIndex.name}`;
+    planetCopy.querySelector("#LearnMoreBtn").addEventListener("click", () => {
         loadDetails(jsonIndex)
-    })
+    });
     document.querySelector("header").after(planetCopy);
 }
 function loadSelectors(dataObject) {
     const selectorCopy = SELECTORTEMPLATE.cloneNode(true);
-    selectorCopy.querySelector("#Title").textContent = "Planet Selection"
-    selectorCopy.querySelector("#Desc").textContent = "Please, select a planet to explore the details about!"
+    TITLETAG.textContent = "Planet Explorer | Up in Space!"
+    selectorCopy.querySelector("#Title").textContent = "Planet Selection";
+    selectorCopy.querySelector("#Desc").textContent = "Please, select a planet to explore the details about!";
 
     const cardFormat = selectorCopy.querySelector("#PLANETTYPEHERE");
-    // Inner Planets
-    
-    for (let i = 0; i < dataObject.groups.planets.length; i++) {
-        let cardClone = cardFormat.cloneNode(true);
-        let jsonIndex = dataObject.groups[0].planets[i]
-        cardClone.id = jsonIndex.name;
-        cardClone.querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`
-        cardClone.querySelector("button").textContent = jsonIndex.name;
-        cardClone.querySelector("button").addEventListener("click", () => {
-            loadPlanet(jsonIndex)
-        })
-        selectorCopy.querySelector("#selectionHolder").appendChild(cardClone)
-    }
-    // Outer Planets
-    for (let i = 0; i < dataObject.groups.planets.length; i++) {
-        let cardClone = cardFormat.cloneNode(true);
-        let jsonIndex = dataObject.groups[1].planets[i]
-        cardClone.id = jsonIndex.name;
-        cardClone.querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`
-        cardClone.querySelector("button").textContent = jsonIndex.name;
-        cardClone.querySelector("button").addEventListener("click", () => {
-            loadPlanet(jsonIndex)
-        })
-        selectorCopy.querySelector("#selectionHolder").appendChild(cardClone)
+
+    for (let i = 0; i < dataObject.groups.length; i++) {
+        for (let v = 0; v < dataObject.groups[i].planets.length; v++) {
+            let cardClone = cardFormat.cloneNode(true);
+            let jsonIndex = dataObject.groups[i].planets[v];
+            cardClone.id = jsonIndex.name;
+            cardClone.querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`;
+            cardClone.querySelector("button").textContent = jsonIndex.name;
+            cardClone.querySelector("button").addEventListener("click", () => {
+                loadPlanet(jsonIndex)
+            });
+            selectorCopy.querySelector("#selectionHolder").appendChild(cardClone);
+        }
     }
     cardFormat.remove();
     document.querySelector("header").after(selectorCopy);
@@ -111,13 +101,13 @@ fetch("data/planets.json")
 
     }).catch(error => {
         let Main = document.createElement("Main")
-        Main.classList="container-fluid flex-grow-1 d-block-flex flex-wrap align-items-center justify-content-center"
+        Main.classList = "container-fluid flex-grow-1 d-block-flex flex-wrap align-items-center justify-content-center"
         document.querySelector("header").after(
             Main
         )
         let h2 = document.createElement("h2")
         h2.classList = "text-center"
-        h2.textContent.textContent=`Uh oh! ${error}`
+        h2.textContent = `Uh oh! ${error}`
         Main.appendChild(h2)
         console.error("Something went wrong: ", error);
     });
