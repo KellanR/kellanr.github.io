@@ -4,13 +4,16 @@ const PLANETTEMPLATE = document.querySelector("#planetTemplate").content;
 const SELECTORTEMPLATE = document.querySelector("#selectorTemplate").content
 const DETAILSTEMPLATE = document.querySelector("#detailsTemplate").content
 
-function loadDetails(jsonIndex) {
+function loadDetails(data, jsonIndex) {
     document.querySelector("main").remove()
     let detailsCopy = DETAILSTEMPLATE.cloneNode(true);
     detailsCopy.querySelector("#Title").textContent = jsonIndex.name
     const ROWFORMAT = detailsCopy.querySelector("#rowFormat")
     const TBODY = detailsCopy.querySelector("tbody")
     detailsCopy.querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`
+    detailsCopy.querySelector("#GoBack").addEventListener("click", () => {
+        loadPlanet(data, jsonIndex);
+    });
     // Mass
     let newRow = ROWFORMAT.cloneNode(true)
     let rowValues = newRow.querySelectorAll("td");
@@ -51,7 +54,7 @@ function loadDetails(jsonIndex) {
 
 }
 
-function loadPlanet(jsonIndex) {
+function loadPlanet(data, jsonIndex) {
     document.querySelector("main").remove();
     TITLETAG.textContent = `${jsonIndex.name} | Up In Space!`;
     let planetCopy = PLANETTEMPLATE.cloneNode(true);
@@ -59,12 +62,18 @@ function loadPlanet(jsonIndex) {
     planetCopy.querySelector("#Desc").textContent = jsonIndex.summary;
     planetCopy.querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`;
     planetCopy.querySelector("#LearnMoreBtn").textContent = `Learn more about ${jsonIndex.name}`;
+    planetCopy.querySelector("#GoBack").addEventListener("click", () => {
+        loadSelectors(data, true)
+    });
     planetCopy.querySelector("#LearnMoreBtn").addEventListener("click", () => {
-        loadDetails(jsonIndex)
+        loadDetails(data, jsonIndex)
     });
     document.querySelector("header").after(planetCopy);
 }
-function loadSelectors(dataObject) {
+function loadSelectors(dataObject, GoBack) {
+    if (GoBack) {
+        document.querySelector("main").remove();
+    }
     const selectorCopy = SELECTORTEMPLATE.cloneNode(true);
     TITLETAG.textContent = "Planet Explorer | Up in Space!"
     selectorCopy.querySelector("#Title").textContent = "Planet Selection";
@@ -80,7 +89,7 @@ function loadSelectors(dataObject) {
             cardClone.querySelector("#Img").alt = `A picture of ${jsonIndex.name}.`;
             cardClone.querySelector("button").textContent = jsonIndex.name;
             cardClone.querySelector("button").addEventListener("click", () => {
-                loadPlanet(jsonIndex)
+                loadPlanet(dataObject, jsonIndex)
             });
             selectorCopy.querySelector("#selectionHolder").appendChild(cardClone);
         }
