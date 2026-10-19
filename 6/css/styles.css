@@ -87,6 +87,12 @@ footer a {
 footer a:hover {
   color: var(--orange);
 }
+footer a:active {
+  color: var(--orange);
+}
+footer a:focus {
+  color: var(--orange);
+}
 
 
 #InternalRedirects {
@@ -125,6 +131,12 @@ footer a:hover {
   height: 100%;
 }
 #loginBtn:hover{
+  background-color:var(--orange);
+}
+#loginBtn:active{
+  background-color:var(--orange);
+}
+#loginBtn:focus{
   background-color:var(--orange);
 }
 @media (max-width: 576px) {
