@@ -16,7 +16,9 @@
           "diameterKm": "4,879 km",
           "orbitalPeriod": "88.0 days",
           "distanceFromSun": "57.9 million km",
-          "moons": "0"
+          "moons": "0",
+          "image": "content/img/planets/mercury.webp",
+          "imageCredit": "NASA"
         },
         {
           "id": "venus",
@@ -26,7 +28,9 @@
           "diameterKm": "12,104 km",
           "orbitalPeriod": "224.7 days",
           "distanceFromSun": "108.2 million km",
-          "moons": "0"
+          "moons": "0",
+          "image": "content/img/planets/venus.jpg",
+          "imageCredit": "NASA/JPL-Caltech"
         },
         {
           "id": "earth",
@@ -36,7 +40,9 @@
           "diameterKm": "12,756 km",
           "orbitalPeriod": "365.2 days",
           "distanceFromSun": "149.6 million km (1 AU)",
-          "moons": "1 (Moon)"
+          "moons": "1 (Moon)",
+          "image": "content/img/planets/earth.jpg",
+          "imageCredit": "NASA/NOAA/GSFC/Suomi NPP/VIIRS/Norman Kuring"
         },
         {
           "id": "mars",
@@ -46,7 +52,9 @@
           "diameterKm": "6,792 km",
           "orbitalPeriod": "687.0 days",
           "distanceFromSun": "228.0 million km",
-          "moons": "2"
+          "moons": "2",
+          "image": "content/img/planets/mars.webp",
+          "imageCredit": "NASA"
         }
       ]
     },
@@ -62,7 +70,9 @@
           "diameterKm": "142,984 km",
           "orbitalPeriod": "4,331 days (about 11.9 years)",
           "distanceFromSun": "778.5 million km",
-          "moons": "95"
+          "moons": "95",
+          "image": "content/img/planets/jupiter.webp",
+          "imageCredit": "NASA"
         },
         {
           "id": "saturn",
@@ -72,7 +82,9 @@
           "diameterKm": "120,536 km",
           "orbitalPeriod": "10,747 days (about 29.4 years)",
           "distanceFromSun": "1,432.0 million km",
-          "moons": "274"
+          "moons": "274",
+          "image": "content/img/planets/saturn.webp",
+          "imageCredit": "NASA/JPL/Space Science Institute"
         },
         {
           "id": "uranus",
@@ -82,7 +94,9 @@
           "diameterKm": "51,118 km",
           "orbitalPeriod": "30,589 days (about 83.7 years)",
           "distanceFromSun": "2,867.0 million km",
-          "moons": "28"
+          "moons": "28",
+          "image": "content/img/planets/uranus.webp",
+          "imageCredit": "NASA, ESA, CSA, STScI"
         },
         {
           "id": "neptune",
@@ -92,7 +106,9 @@
           "diameterKm": "49,528 km",
           "orbitalPeriod": "59,800 days (about 163.7 years)",
           "distanceFromSun": "4,515.0 million km",
-          "moons": "16"
+          "moons": "16",
+          "image": "content/img/planets/neptune.webp",
+          "imageCredit": "NASA/JPL-Caltech"
         }
       ]
     }
