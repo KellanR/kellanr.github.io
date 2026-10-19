@@ -124,9 +124,9 @@ footer a:hover {
   width: 25%;
   height: 100%;
 }
-
-
-
+#loginBtn:hover{
+  color:var(--orange);
+}
 @media (max-width: 576px) {
   .planetSelectionHolder {
     width: 100%;
