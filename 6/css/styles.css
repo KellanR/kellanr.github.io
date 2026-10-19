@@ -1,12 +1,4 @@
-/* ==========================================================================
-   Up in Space! - Project 4 styles
-   Sections: 1. Variables  2. Navbar  3. Planet selector  4. Planet images
-             5. Footer  6. Media queries (keep last so they override)
-   ========================================================================== */
 
-
-/* 1. Variables
-   -------------------------------------------------------------------------- */
 :root {
   --black: rgb(0, 0, 0);
   --prussian-blue: rgb(20, 33, 61);
@@ -15,9 +7,6 @@
   --white: rgb(255, 255, 255);
 }
 
-
-/* 2. Navbar
-   -------------------------------------------------------------------------- */
 .navbar {
   background-color: var(--bs-dark);
 }
@@ -28,12 +17,12 @@
 }
 
 
-/* 3. Planet selector
-   -------------------------------------------------------------------------- */
-#selectionHolder>div {
+.planetSelectionHolder{
   width: 25%;
-}
+  max-width: 18rem; 
+  margin-bottom: 1rem;
 
+}
 .planetSelectionHolder {
   height: 25%;
   padding-top: 1rem;
@@ -46,31 +35,43 @@
 }
 
 
-/* 4. Planet images
-   -------------------------------------------------------------------------- */
-/* Selector cards: fill the card with a square image */
-div > #PlanetImg {
+div > figure > #PlanetImg {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  
 }
 
-/* Planet and details views: smaller square image */
-main > #PlanetImg {
-  width: 25%;
-  height: 25%;
+main > figure > #PlanetImg {
+  width: 100%;
+  max-width: 20rem;
+  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  border-radius: 1rem;
 }
 
 
-/* 5. Footer
-   -------------------------------------------------------------------------- */
-footer>div {
+#goBack {
+  border: none;
+  color: var(--black);
+  height: 3rem;
+}
+#PlanetFigCaption{
+  text-align: center;
+  font-style: italic;
+}
+#PlanetFigCaptionLight{
+  color:var(--white)
+}
+
+
+
+footer > div {
   justify-content: center;
   border: solid;
   border-radius: 1rem;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 
 footer .row {
@@ -87,12 +88,13 @@ footer a:hover {
   color: var(--orange);
 }
 
-/* Left column: internal page links */
+
 #InternalRedirects {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: center;
   gap: 0.5rem;
 }
 
@@ -104,21 +106,11 @@ footer a:hover {
   border: 0.125rem var(--white);
   border-style: solid;
   border-radius: 0.8rem;
-  margin-bottom: 0.5rem;
   padding: 0.25rem 1rem;
+  max-height: 25%;
 }
 
-#goBack {
-  border: none;
-  color: var(--black);
-  height: 3rem;
-}
 
-/* Middle and right columns: quote and GitHub link */
-#Statements {
-  text-align: center;
-  font-size: 1rem;
-}
 
 #Statements,
 #ExternalRedirects {
@@ -134,27 +126,25 @@ footer a:hover {
 }
 
 
-/* 6. Media queries (keep at the bottom)
-   -------------------------------------------------------------------------- */
+
 @media (max-width: 576px) {
-  #selectionHolder>div {
+  .planetSelectionHolder {
     width: 100%;
+    max-width: none; 
   }
 
   #ExternalRedirects {
     display: none;
   }
-  footer{
-    max-height: 5%;
-  }
-  
-  main > #PlanetImg {
+
+  main > figure > #PlanetImg {
     min-width: 50%;
-    min-height: 50%;
-    
+    max-width: 15rem; 
+    border-radius: 2rem;
   }
-  #planetSelectioNHolder > #PlanetImg{
-    width: 25%;
-    height: 25%;
+}@media (min-width: 577px) and (max-width: 991px) {
+  .planetSelectionHolder {
+    width: 45%;
+    max-width: none;
   }
 }
