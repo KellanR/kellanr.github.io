@@ -62,7 +62,7 @@ function loadDetails(data, planet) {
 // Parameters(Entire JSONObject for back button, Specific Planet Subset JSON)
 function loadPlanet(data, planet) {
     document.querySelector("main").remove();
-    TITLETAG.textContent = `${planet.name} | Up In Space!`;
+    TITLE_TAG.textContent = `${planet.name} | Up In Space!`;
     let planetCopy = PLANET_TEMPLATE.cloneNode(true);
     planetCopy.querySelector("#Title").textContent = planet.name;
     planetCopy.querySelector("#Desc").textContent = planet.summary;
@@ -86,7 +86,7 @@ function loadSelectors(dataObject, goBack) {
         document.querySelector("main").remove();
     }
     const selectorCopy = SELECTOR_TEMPLATE.cloneNode(true);
-    TITLETAG.textContent = "Planet Explorer | Up in Space!";
+    TITLE_TAG.textContent = "Planet Explorer | Up in Space!";
     selectorCopy.querySelector("#Title").textContent = "Planet Selection";
     selectorCopy.querySelector("#Desc").textContent = "Please, select a planet to explore the details about!";
 
