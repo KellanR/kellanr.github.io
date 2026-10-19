@@ -95,7 +95,7 @@ function loadSelectors(dataObject, goBack) {
             cardClone.id = jsonIndex.name;
             cardClone.querySelector("#PlanetImg").src = jsonIndex.image;
             cardClone.querySelector("#PlanetImg").alt = `A picture of ${jsonIndex.name}.`;
-            cardClone.querySelector("#PlanetFigCaption").textContent = jsonIndex.imageCredit;
+            cardClone.querySelector("#PlanetFigCaptionLight").textContent = jsonIndex.imageCredit;
             cardClone.querySelector("button").textContent = jsonIndex.name;
             cardClone.querySelector("button").addEventListener("click", () => {
                 loadPlanet(dataObject, jsonIndex);
