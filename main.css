@@ -41,6 +41,7 @@ ul {
   color: white;
   list-style-type:none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -54,7 +55,7 @@ ul {
   border-radius: 1rem;
   border-style: solid;
   border-color: white;
-  margin: .1em .3em;
+  margin: .5em .5em;
 }
 .projectButtons a {
   display: flex;

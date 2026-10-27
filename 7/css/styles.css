@@ -1,0 +1,162 @@
+
+:root {
+  --black: rgb(0, 0, 0);
+  --prussian-blue: rgb(20, 33, 61);
+  --orange: rgb(252, 163, 17);
+  --alabaster-grey: rgb(229, 229, 229);
+  --white: rgb(255, 255, 255);
+}
+
+.navbar {
+  background-color: var(--bs-dark);
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+  color: var(--orange);
+}
+
+
+.planetSelectionHolder{
+  width: 25%;
+  max-width: 18rem; 
+  margin-bottom: 1rem;
+
+}
+.planetSelectionHolder {
+  height: 25%;
+  padding-top: 1rem;
+  display: flex;
+}
+
+#selectorButton {
+  width: 50%;
+  font-size: 1.3rem;
+}
+
+
+div > figure > #PlanetImg {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  
+}
+
+main > figure > #PlanetImg {
+  width: 100%;
+  max-width: 20rem;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+
+#goBack {
+  border: none;
+  color: var(--black);
+  height: 3rem;
+}
+#PlanetFigCaption, #PlanetFigCaptionLight{
+  text-align: center;
+  font-style: italic;
+}
+#PlanetFigCaptionLight{
+  color:var(--white)
+}
+
+
+
+footer > div {
+  justify-content: center;
+  border: solid;
+  border-radius: 1rem;
+  padding: 0.5rem 0;
+}
+
+footer .row {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+footer a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--orange);
+}
+footer a:active {
+  color: var(--orange);
+}
+footer a:focus {
+  color: var(--orange);
+}
+
+
+#InternalRedirects {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 0.5rem;
+}
+
+.footerlinkredirects {
+  color: var(--white);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  border: 0.125rem var(--white);
+  border-style: solid;
+  border-radius: 0.8rem;
+  padding: 0.25rem 1rem;
+  max-height: 25%;
+}
+
+
+
+#Statements,
+#ExternalRedirects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#GithubLogo,
+#repoLink {
+  width: 25%;
+  height: 100%;
+}
+#loginBtn:hover{
+  background-color:var(--orange);
+}
+#loginBtn:active{
+  background-color:var(--orange);
+}
+#loginBtn:focus{
+  background-color:var(--orange);
+}
+@media (max-width: 576px) {
+  .planetSelectionHolder {
+    width: 100%;
+    max-width: none; 
+  }
+
+  #ExternalRedirects {
+    display: none;
+  }
+
+  main > figure > #PlanetImg {
+    min-width: 50%;
+    max-width: 15rem; 
+    border-radius: 2rem;
+  }
+}@media (min-width: 577px) and (max-width: 991px) {
+  .planetSelectionHolder {
+    width: 45%;
+    max-width: none;
+  }
+}
