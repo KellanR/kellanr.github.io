@@ -4,9 +4,10 @@ const PLANET_TEMPLATE = document.querySelector("#planetTemplate").content;
 const SELECTOR_TEMPLATE = document.querySelector("#selectorTemplate").content;
 const DETAILS_TEMPLATE = document.querySelector("#detailsTemplate").content;
 
-console.log("Test")
+
 import { db } from './firebase.js';
-import { collection, getDocs } from 'https://gstatic.com';
+import { collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 async function readAllPlanets() {
   try {

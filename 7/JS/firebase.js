@@ -1,5 +1,5 @@
-import { initializeApp } from 'https://gstatic.com';
-import { getFirestore } from 'https://gstatic.com';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
