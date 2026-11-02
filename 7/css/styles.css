@@ -41,7 +41,12 @@ div > figure > #PlanetImg {
   object-fit: cover;
   
 }
-
+#signoutBtn, #logout-btn {
+  background-color: var(--orange);
+  font-weight: bold;
+  border: none;
+  color: var(--white);
+}
 main > figure > #PlanetImg {
   width: 100%;
   max-width: 20rem;
@@ -50,7 +55,14 @@ main > figure > #PlanetImg {
   object-fit: cover;
   border-radius: 1rem;
 }
-
+#loadingSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh; 
+  font-size: 1.5rem;
+}
 
 #goBack {
   border: none;

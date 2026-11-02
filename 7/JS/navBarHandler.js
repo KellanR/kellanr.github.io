@@ -4,21 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // We will now be implementing templates to help with dynamic changinges.
 
   const navData = {
-    home: {
-      text: "Home",
-      href: "/7/index.html"
-    },
-    PlanetExplorer: {
-      text: "Planet Explorer",
-      href: "/7/planetexplorer.html"
+    contactus: {
+      text: "Contact Us",
+      href: "/7/contactus.html"
     },
     TheFormation: {
       text: "The Formation",
       href: "/7/theformation.html"
-    },
-    contactus:{
-      text: "Contact Us",
-      href: "/7/contactus.html"
+    }, 
+    PlanetExplorer: {
+      text: "Planet Explorer",
+      href: "/7/planetexplorer.html"
+    }, 
+    home: {
+      text: "Home",
+      href: "/7/index.html"
     },
   };
 
@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navData[navDetails]["href"]) {
       Anchor.href = navData[navDetails]["href"];
       Anchor.textContent = navData[navDetails]["text"];
-      
+
       // Duplicate and append before Bootstrap class tagging.
       Anchor.className = "footerlinkredirects";
       document.getElementById("InternalRedirects").appendChild(Anchor.cloneNode(true));
-      
+
       // ClassName overwrite for the navbar link.
       Anchor.className = "nav-link";
       newNav.appendChild(Anchor);
@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
       newNav.appendChild(Anchor);
     }
     newNav.className = "nav-item me-3";
-    document.getElementById("NavsHolder").appendChild(newNav);
+    document.getElementById("NavsHolder").insertAdjacentElement("afterbegin", newNav);
   }
+
 });

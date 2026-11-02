@@ -7,9 +7,10 @@ const DETAILS_TEMPLATE = document.querySelector("#detailsTemplate").content;
 
 import { db } from './firebase.js';
 import { collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import {auth} from './firebase.js';
+import {onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-async function readAllPlanets() {
+async function getPlanets() {
   try {
     // 1. Create a reference to your collection (e.g., 'planetdata')
     const collectionRef = collection(db, 'planetdata');
@@ -18,25 +19,23 @@ async function readAllPlanets() {
     const querySnapshot = await getDocs(collectionRef);
     
     // 3. Loop through the documents and read their contents
+   let PlanetData = [];
     querySnapshot.forEach((doc) => {
-      // doc.id gives you the string ID, doc.data() gives you the actual fields
-      console.log(`Document ID: ${doc.id}`);
-      console.log('Document Data:', doc.data());
+      PlanetData.push({id: doc.id, ...doc.data()});
     });
+    
+    return PlanetData;
+    
   } catch (error) {
     console.error("Error reading collection: ", error);
   }
 }
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
   if (user) {
-    // Signed in: safe to read from Firestore
-    console.log("Signed in as", user.email);
-    readAllPlanets();
-  } else {
-    // Signed out: hide the data, show the login form
-    console.log("Not signed in");
-  }
+    let planetData = await getPlanets();
+    loadSelectors(planetData, false);
+  } 
 });
 
 // Loads the details for properties for planets.
@@ -126,11 +125,9 @@ function loadSelectors(dataObject, goBack) {
     selectorCopy.querySelector("#Desc").textContent = "Please, select a planet to explore the details about!";
 
     const cardFormat = selectorCopy.querySelector("#PLANETTYPEHERE");
-
-    for (let i = 0; i < dataObject.groups.length; i++) {
-        for (let v = 0; v < dataObject.groups[i].planets.length; v++) {
+    
+    dataObject.forEach((planet) => { 
             let cardClone = cardFormat.cloneNode(true);
-            let planet = dataObject.groups[i].planets[v];
             cardClone.id = planet.name;
             cardClone.querySelector("#PlanetImg").src = planet.image;
             cardClone.querySelector("#PlanetImg").alt = `A picture of ${planet.name}.`;
@@ -140,30 +137,29 @@ function loadSelectors(dataObject, goBack) {
                 loadPlanet(dataObject, planet);
             });
             selectorCopy.querySelector("#selectionHolder").appendChild(cardClone);
-        }
-    }
+      });
     cardFormat.remove();
     document.querySelector("header").after(selectorCopy);
 
 }
 
-fetch("data/planets.json")
-    .then(data => {
-        if (!data.ok) {
-            throw new Error("Bad HTTP!");
-        }
-        return data.json();
-    }).then(dataObject => {
-        loadSelectors(dataObject);
+// fetch("data/planets.json")
+//     .then(data => {
+//         if (!data.ok) {
+//             throw new Error("Bad HTTP!");
+//         }
+//         return data.json();
+//     }).then(dataObject => {
+//         loadSelectors(dataObject);
 
-    }).catch(error => {
-        let Main = document.createElement("Main");
-        Main.classList = "container-fluid flex-grow-1 d-block-flex flex-wrap align-items-center justify-content-center";
-        document.querySelector("header").after(
-            Main
-        );
-        let h2 = document.createElement("h2");
-        h2.classList = "text-center";
-        h2.textContent = `Uh oh! We couldn't load the planets...`;
-        Main.appendChild(h2);
-    });
+//     }).catch(error => {
+//         let Main = document.createElement("Main");
+//         Main.classList = "container-fluid flex-grow-1 d-block-flex flex-wrap align-items-center justify-content-center";
+//         document.querySelector("header").after(
+//             Main
+//         );
+//         let h2 = document.createElement("h2");
+//         h2.classList = "text-center";
+//         h2.textContent = `Uh oh! We couldn't load the planets...`;
+//         Main.appendChild(h2);
+//     });
