@@ -33,9 +33,14 @@ async function getPlanets() {
 
 onAuthStateChanged(auth, async (user) => {
   if (user) {
+
     let planetData = await getPlanets();
-    loadSelectors(planetData, false);
-  } 
+    if (planetData) {
+      loadSelectors(planetData, false);
+    }
+  } else {
+    document.querySelector("#loadingSpinner strong").textContent = "Uh oh! We couldn't load the planets...";
+  }
 });
 
 // Loads the details for properties for planets.
@@ -112,7 +117,6 @@ function loadPlanet(data, planet) {
     });
     document.querySelector("header").after(planetCopy);
 }
-
 // Loads all the all the each planets out to choose from on one page.
 // Parameters(JSONObject, bool detection of a to remove Main if we were going back.)
 function loadSelectors(dataObject, goBack) {
@@ -142,24 +146,3 @@ function loadSelectors(dataObject, goBack) {
     document.querySelector("header").after(selectorCopy);
 
 }
-
-// fetch("data/planets.json")
-//     .then(data => {
-//         if (!data.ok) {
-//             throw new Error("Bad HTTP!");
-//         }
-//         return data.json();
-//     }).then(dataObject => {
-//         loadSelectors(dataObject);
-
-//     }).catch(error => {
-//         let Main = document.createElement("Main");
-//         Main.classList = "container-fluid flex-grow-1 d-block-flex flex-wrap align-items-center justify-content-center";
-//         document.querySelector("header").after(
-//             Main
-//         );
-//         let h2 = document.createElement("h2");
-//         h2.classList = "text-center";
-//         h2.textContent = `Uh oh! We couldn't load the planets...`;
-//         Main.appendChild(h2);
-//     });

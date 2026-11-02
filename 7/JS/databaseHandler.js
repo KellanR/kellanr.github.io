@@ -15,7 +15,9 @@ const logoutBtn = document.querySelector("#logout-btn"); //Index.html logout but
 if (googleBtn) {
     googleBtn.addEventListener("click", async () => {
     msg.textContent = "";
-    spinner.hidden = false;
+    if (spinner) {
+        spinner.hidden = false;
+    }
     try {
         await signInWithPopup(auth, provider);
     } catch (err) {
@@ -27,7 +29,9 @@ if (googleBtn) {
 }
 if (signoutBtn) {
     signoutBtn.addEventListener("click", () => {
-        spinner.hidden = false;
+        if (spinner) { // If we are on index.html, we have a spinner to show.
+            spinner.hidden = false;
+        }
         signOut(auth);
     });
     
