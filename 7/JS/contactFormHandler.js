@@ -38,8 +38,7 @@ form.addEventListener("submit", async (e) => {
         errorMsg.textContent = `Sorry, we couldn't send your message: ${error.message}`;
         errorMsg.hidden = false;
     } finally {
-        successMsg.hidden = true;
-        errorMsg.hidden = true;
+        
         spinner.hidden = true;
         submitBtn.textContent = "Submit";
         submitBtn.disabled = false;

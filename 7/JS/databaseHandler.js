@@ -8,7 +8,7 @@ const loginFormTitle = document.querySelector("#loginFormTitle");
 
 const googleBtn = document.querySelector("#google-btn");
 const signoutBtn = document.querySelector("#signoutBtn");
-const spinner = document.querySelectorAll("#spinner");
+const spinner = document.querySelector("#spinner");
 
 const logoutBtn = document.querySelector("#logout-btn"); //Index.html logout button
 
