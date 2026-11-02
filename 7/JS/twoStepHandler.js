@@ -28,8 +28,9 @@ async function getPlanets() {
     
   } catch (error) {
     console.error("Error reading collection: ", error);
+    document.querySelector("#loadingSpinner strong").textContent = "Uh oh! We couldn't load the planets...";
   }
-}
+} 
 
 onAuthStateChanged(auth, async (user) => {
   if (user) {
