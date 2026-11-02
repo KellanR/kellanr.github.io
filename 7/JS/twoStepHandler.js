@@ -23,7 +23,7 @@ async function getPlanets() {
     querySnapshot.forEach((doc) => {
       PlanetData.push({id: doc.id, ...doc.data()});
     });
-    
+    document.querySelector("#spinnerMain").remove();
     return PlanetData;
     
   } catch (error) {
