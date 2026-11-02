@@ -28,8 +28,17 @@ async function readAllPlanets() {
   }
 }
 
-// Call the function to execute the read
-readAllPlanets();
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // Signed in: safe to read from Firestore
+    console.log("Signed in as", user.email);
+    readAllPlanets();
+  } else {
+    // Signed out: hide the data, show the login form
+    console.log("Not signed in");
+  }
+});
+
 // Loads the details for properties for planets.
 // Parameters(Entire JSONObject for back button, Specific Planet Subset JSON)
 function loadDetails(data, planet) {
