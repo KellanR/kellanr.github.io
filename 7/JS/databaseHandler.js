@@ -1,6 +1,6 @@
 "use strict";
 import { onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import {auth} from './firebase.js';
+import {auth, db} from './firebase.js';
 
 const provider = new GoogleAuthProvider();
 const msg = document.querySelector("#msg");
@@ -11,7 +11,7 @@ const signoutBtn = document.querySelector("#signoutBtn");
 const spinner = document.querySelectorAll("#spinner");
 
 const logoutBtn = document.querySelector("#logout-btn"); //Index.html logout button
-let CurrentUser = null;
+
 if (googleBtn) {
     googleBtn.addEventListener("click", async () => {
     msg.textContent = "";
@@ -38,7 +38,7 @@ if (logoutBtn) {
     });   
 }
 onAuthStateChanged(auth, (user) => {
-    CurrentUser = user;
+    
     if (user) { 
         if (loginFormTitle) {
             loginFormTitle.textContent = `Welcome! ${user.displayName}`;
@@ -60,7 +60,7 @@ onAuthStateChanged(auth, (user) => {
         if (window.location.pathname !== "/7/index.html") {
             window.location.href = "/7/index.html";
         }
-        currentUser = null;
+        
         if (spinner) {
             spinner.hidden = true;
         }
@@ -79,31 +79,3 @@ onAuthStateChanged(auth, (user) => {
     }
 })
 
-const form = document.querySelector("#ContactForm");
-if (form) {
-form.addEventListener("submit", async (event) => {
-    let submitBtn = document.querySelector("#contactSubmitBtn");
-    // successMsg.hidden = true;
-    // errorMsg.hidden = true;
-    submitBtn.disabled = true;
-    try {
-        await addDoc(collection(db, "contactRequest"), {
-            name: form.name.value.trim(),
-            email: form.email.value.trim(),
-            message: form.message.value.trim(),
-            uid: CurrentUser.uid,
-            submittedAt: serverTimestamp()
-        });
-        // successMsg.textContent = "Thanks! Your message was received and saved.";
-        // successMsg.hidden = false;
-        form.reset();
-    } catch (error) {
-        console.error("Error sending message: ", error);
-        // errorMsg.textContent = `Sorry, we couldn't send your message: ${error.message}`;
-        // errorMsg.hidden = false;
-    } finally {
-        // spinner.hidden = true;
-        submitBtn.disabled = false;
-    }
-});
-}
