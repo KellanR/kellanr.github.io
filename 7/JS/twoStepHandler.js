@@ -34,7 +34,7 @@ async function getPlanets() {
 
 onAuthStateChanged(auth, async (user) => {
   if (user) {
-
+    
     let planetData = await getPlanets();
     if (planetData) {
       loadSelectors(planetData, false);

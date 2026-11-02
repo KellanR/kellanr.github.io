@@ -41,11 +41,14 @@ div > figure > #PlanetImg {
   object-fit: cover;
   
 }
-#signoutBtn, #logout-btn {
+#signoutBtn, #logout-btn, #changePasswordBtn {
   background-color: var(--orange);
   font-weight: bold;
   border: none;
-  color: var(--white);
+  color: var(--black);
+}
+#changePasswordBtn{
+  margin-right: 0.5rem;
 }
 main > figure > #PlanetImg {
   width: 100%;
