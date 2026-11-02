@@ -70,8 +70,12 @@
                 <label for="message">Message:</label>
                 <textarea class="form-control bg-transparent text-light" id="message" name="message" rows="5"
                     required></textarea>
-                <button id="contactSubmitBtn" type="submit" class="btn btn-primary mt-3">Submit</button>
+                <button id="contactSubmitBtn" type="submit" class="btn btn-primary mt-3 mb-3">Submit</button>
+                <div id="contactSubmitSpinner" class="spinner-border ml-auto align-items-center" role="status" aria-hidden="true" hidden></div>
+                <p id="successMsg" class="text-success fw-bold fs-5 mt-3" hidden></p>
+                <p id="errorMsg" class="text-danger fw-bold fs-5 mt-3" hidden></p>
             </form>
+
         </div>
     </main>
 
